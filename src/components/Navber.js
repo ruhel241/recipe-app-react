@@ -33,9 +33,6 @@ function Navber() {
                             <li>
                                 <Link to="/recipes">Recipes</Link>
                             </li>
-                            <li>
-                                <Link to="/single-recipe">Single Recipe</Link>
-                            </li>
                         </ul>
                     </nav>
                 </Grid>

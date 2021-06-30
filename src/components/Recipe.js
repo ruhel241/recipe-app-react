@@ -29,15 +29,21 @@ class Recipe extends Component {
         return (
             <Grid item md={3} sm={8} xs={12} className="recipe-root">
                 <Card className={`recipe-card`}>
-                    <CardMedia
-                        className={classes.media}
-                        image={recipe.strMealThumb}
-                        title="Paella dish"
-                    />
+                        <Link
+                            to={`/single-recipe/${recipe.idMeal}`}>
+                            <CardMedia
+                                className={classes.media}
+                                image={recipe.strMealThumb}
+                                title={recipe.strMeal}
+                            />
+                        </Link>
                     <CardContent>
-                        <Typography variant="h1" className="recipe-title">
-                            {recipe.strMeal}
-                        </Typography>
+                        <Link
+                            to={`/single-recipe/${recipe.idMeal}`} style={{textDecoration:'none', color: 'currentcolor'}}>
+                            <Typography variant="h1" className="recipe-title">
+                                {recipe.strMeal}
+                            </Typography>
+                        </Link>
 
                         <Typography component="p" className="recipe-made">
                             Category: {recipe.strCategory}
@@ -56,7 +62,6 @@ class Recipe extends Component {
                         <IconButton aria-label="link">
                             <LinkIcon/>
                         </IconButton>
-
                     </CardActions>
                 </Card>
             </Grid>

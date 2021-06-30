@@ -38,11 +38,7 @@ class Recipes extends Component {
           console.log(error);
         }
     }
-
-    // componentDidMount(){
-    //     this.getRecipes();
-    // }
-        
+      
     handleChange = e => {
         this.setState({
             search: e.target.value
