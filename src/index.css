@@ -15,6 +15,9 @@ code {
 .navber {
   padding: 20px;
 }
+.recipe-nav{
+  padding-left: 50px;
+}
 .logo {
   /* width: 100%; */
 }
@@ -157,5 +160,8 @@ th, td {
   }
   .recipe-card{
     width: 100% !important;
+  }
+  .recipe-nav{
+    padding-left: 0px;
   }
 }

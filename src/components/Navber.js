@@ -12,7 +12,7 @@ function Navber() {
             direction="row"
             alignItems="center"
             >
-                <Grid item sm={2} style={{ paddingLeft: 50 }}>
+                <Grid item sm={2} className="recipe-nav">
                     <div className="recipe-logo">
                         <Link to="/">
                             <img src={logo} alt="logo" className="logo"/>
