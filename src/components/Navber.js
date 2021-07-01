@@ -1,16 +1,9 @@
-import React from "react";
-import {
-    //BrowserRouter as Router,
-    //Switch,
-    //Route,
-    Link
-} from "react-router-dom";
-
-import logo from '../images/logo.svg';
-// import Container from '@material-ui/core/Container';
 import '../index.css';
+import React from "react";
+import {Link} from "react-router-dom";
+import logo from '../images/logo.svg';
 import Grid from '@material-ui/core/Grid';
-// import Paper from '@material-ui/core/Paper';
+
 function Navber() {
     return(
         <nav className="navber">
@@ -21,7 +14,9 @@ function Navber() {
             >
                 <Grid item sm={2} style={{ paddingLeft: 50 }}>
                     <div className="recipe-logo">
-                        <img src={logo} alt="logo"/>
+                        <Link to="/">
+                            <img src={logo} alt="logo" className="logo"/>
+                        </Link>
                     </div>
                 </Grid>
                 <Grid item sm={6}>

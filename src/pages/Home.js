@@ -14,7 +14,7 @@ class Home extends Component {
                     variant="contained"
                     color="primary"
                     className="search-btn">
-                        Serch Recipe
+                        Search Recipe
                     </Button>
                 </Link>
             </Header>

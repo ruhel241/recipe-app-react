@@ -25,7 +25,7 @@ const useStyles = theme => ({
 class Recipe extends Component {
     render(){
         const { classes, recipe } = this.props;
-        // console.log(recipe);
+      
         return (
             <Grid item md={3} sm={8} xs={12} className="recipe-root">
                 <Card className={`recipe-card`}>
@@ -60,7 +60,14 @@ class Recipe extends Component {
                         </IconButton>
                         
                         <IconButton aria-label="link">
-                            <LinkIcon/>
+                            <a
+                                href={"https://www.themealdb.com"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-success mx-2 text-capitalize"
+                            >
+                                <LinkIcon/>
+                            </a>
                         </IconButton>
                     </CardActions>
                 </Card>

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Search from "../components/Search";
 import { recipeData } from "../data/tempList";
 import RecipeList from "../components/RecipeList";
+import Alert from '@material-ui/lab/Alert';
+import Container from '@material-ui/core/Container';
 
 class Recipes extends Component {
     constructor(props) {
@@ -16,7 +18,7 @@ class Recipes extends Component {
         base_url: `https://www.themealdb.com/api/json/v1/1/search.php`,
         query: "?s=",
         error: "",
-        status: 'fetched'
+        loading: false
     }
     
     async getRecipes() {
@@ -25,13 +27,13 @@ class Recipes extends Component {
           const responseData = await response.json();
             if (!responseData.meals) {
                 this.setState({
-                    error: "sorry but your search did not return any recipes, please try again or press search icon for the most popular recipes",
+                    error: "Sorry but your search did not return any recipes, please try again or press search icon for the most popular recipes",
                 });
             } else {
                 this.setState({
                     recipes: responseData.meals,
                     error: "",
-                    status: 'fetched'
+                    loading: false
                 });
             }
         } catch (error) {
@@ -52,7 +54,7 @@ class Recipes extends Component {
             {
                 url: `${base_url}${query}${search}`,
                 search: '',
-                status: 'loading'
+                loading: true
             }, 
             () => this.getRecipes()
         );
@@ -67,15 +69,13 @@ class Recipes extends Component {
                     handleSubmit={this.handleSubmit}
                 />
                 {this.state.error ? (
-                    <section> 
-                        <div className="error-cls" style={{textAlign: 'center'}}> 
-                            <h1>{this.state.error}</h1>
-                        </div>
-                    </section>
+                    <Container maxWidth="md" style={{marginTop:50}}>
+                        <Alert severity="error">{this.state.error}</Alert>
+                    </Container>
                 ): (
                     <RecipeList 
                         recipes={this.state.recipes}
-                        status={this.state.status}
+                        loading={this.state.loading}
                     />
                 )}
             </div>

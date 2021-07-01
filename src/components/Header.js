@@ -16,5 +16,5 @@ export default Header;
 Header.defaultProps = {
     title: "default title",
     styleClass: "header-hero"
-  };
+};
   

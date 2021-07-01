@@ -4,9 +4,12 @@ class Ingredent extends Component {
     
     render() {
         const {ingredient} = this.props;
-        // console.log(ingredient)
+      
         return(
-            <li>{ingredient.name} {'=>'} {ingredient.measure}</li>
+            <tr>
+                <td>{ingredient.name} </td>
+                <td>{ingredient.measure}</td>
+            </tr>
         )
     }
 }

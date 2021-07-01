@@ -40,7 +40,6 @@ class SingleRecipe extends Component {
         try {
           const response = await fetch(url);
           const responseData = await response.json();
-          console.log(responseData.meals[0]);
             this.setState({
                 recipe: responseData.meals[0], 
                 loading: false
@@ -55,7 +54,6 @@ class SingleRecipe extends Component {
     render(){
         const {strMeal, strMealThumb, strCategory, strInstructions, strYoutube} = this.state.recipe;
         
-        
         const getIngredent = () => {
             let data = [];
             let i;
@@ -68,33 +66,12 @@ class SingleRecipe extends Component {
             }
             return data;
         }
-        // const Ingredent = getIngredent().map((ingredient, index) => (
-        //     (ingredient.name != '') ? 
-        //         <li key={index}>{ingredient.name} {'=>'} {ingredient.measure}</li>
-        //     : ""
-        // ))
-        // const getData = async () => {
-        //     let data = [];
-        //     let i = 1;
-        //     for (i; i <= 20; i++) {
-        //       const item = {
-        //         name: meal[`strIngredient${i}`],
-        //         measure: meal[`strMeasure${i}`],
-        //         img: getIngredientImg(meal[`strIngredient${i}`]),
-        //       };
-        //       data.push(item);
-        //       i += 1;
-        //     }
-        //     return setIngredients(data);
-        //   };
 
-
-        
         if (this.state.loading) {
             return (
-                <Container maxWidth="md">
-                    <h2 className="loading">
-                        loading recipe....
+                <Container maxWidth="md" style={{marginTop: "300px"}}>
+                    <h2 className="loading" style={{textAlign: "center"}}>
+                            Loading Recipe......
                     </h2>
                 </Container>
             );
@@ -118,29 +95,33 @@ class SingleRecipe extends Component {
                                 Category: {strCategory}
                             </Typography> <br/>
                             
-                            <Typography component="p">
+                            <Typography component="p" className="instructions">
                                 <b>Instructions:</b> {strInstructions}
                             </Typography>
-                            <br/><br/><br/>
-                           
-                           <div>
-                                <b>Ingredient:</b> 
-                                <ul>
-                                    {
-                                        // Ingredent
-                                        getIngredent().map((ingredient, index) => (
-                                            (ingredient.name !== '') ? 
-                                                <Ingredent key={index} ingredient={ingredient}/>
-                                            : ""
-                                        )) 
-                                    }
-                                </ul>
-                           </div>
-                           
+                            
+                          
+                           {getIngredent() && (
+                                <div className="ingredent">
+                                    <p className="title">Ingredient:</p>
+                                    <table>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Measure</th> 
+                                        </tr> 
+                                        {
+                                            getIngredent().map((ingredient, index) => (
+                                                (ingredient.name !== '') ? 
+                                                    <Ingredent key={index} ingredient={ingredient}/>
+                                                : ""
+                                            )) 
+                                        }
+                                    </table>
+                                </div>
+                            )}
                             
                             {strYoutube && (
                                 <div>
-                                    <b>Youtube:</b> 
+                                    <b>Youtube:</b> <br/><br/>
                                     <ReactPlayer 
                                         url={strYoutube}
                                         className="react-player"

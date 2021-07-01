@@ -11,17 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* 
-.navber {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-.recipe-logo {
 
-} */
 .navber {
   padding: 20px;
+}
+.logo {
+  /* width: 100%; */
 }
 .nav-menu ul{
   display: flex;
@@ -42,15 +37,18 @@ code {
   color:black;
 }
 
+.header {
+  min-height: calc(100vh - 64px);
+  background-size: cover;
+  position: relative;
+}
 
 .header-hero {
-  min-height: calc(100vh - 64px);
   background-image:  linear-gradient(rgba(241, 81, 37, 0.3), rgba(241, 81, 37, 0.3)), url("./images/homeBcg.jpeg");
-  background-size: cover;
-  /* background-repeat: no-repeat; */
-  /* background-attachment: fixed;
-  background-position: center; */
-  position: relative;
+}
+
+.default-hero {
+   background-image:  linear-gradient(rgba(241, 81, 37, 0.3), rgba(241, 81, 37, 0.3)), url("./images/defaultBcg.jpeg");
 }
 
 .header-box{
@@ -108,9 +106,48 @@ code {
   height: 100%  !important;
 }
 
+
+.media {
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.instructions {
+  margin-bottom: 30px !important;
+  text-align: justify;
+  line-height: 1.9 !important;
+}
+
+.ingredent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.ingredent .title {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+table {
+  width:70%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  width: 52%;
+  padding: 15px;
+  text-align: left;
+}
+
+
 @media only screen and (max-width: 800px) {
   .recipe-root {
     margin-right: 0px !important;
+  }
+  table {
+    width:100% !important;
   }
 }
 
@@ -121,10 +158,4 @@ code {
   .recipe-card{
     width: 100% !important;
   }
-}
-
-
-.media {
-  height: 0;
-  padding-top: 56.25%;
 }
