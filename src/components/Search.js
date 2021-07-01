@@ -16,7 +16,7 @@ class Search extends Component {
         <Container maxWidth="sm">
           <div className="search" style={{marginTop: 70}}>
             <h1 className="title">Search recipes with <strong>API</strong> </h1>
-            <p className="content">Types Recipes Separated By Comma</p>
+            <p className="content">Types Recipe By Category Chicken, Pork, Vegetarian etc</p>
             
             <FormControl  
               variant="outlined" 
@@ -27,7 +27,7 @@ class Search extends Component {
                 Search Recipes
               </InputLabel>
               <OutlinedInput
-                placeholder="chicken,onion,carrots"
+                placeholder="Chicken, Pork, Vegetarian"
                 labelWidth={110}
                 value={search}
                 onChange={handleChange}
