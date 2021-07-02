@@ -6,11 +6,7 @@ import Alert from '@material-ui/lab/Alert';
 import Container from '@material-ui/core/Container';
 
 class Recipes extends Component {
-    constructor(props) {
-        super(props);
-        this.getRecipes = this.getRecipes.bind(this);
-    }
-   
+    
     state = {
         recipes: recipeData,
         search: "",
