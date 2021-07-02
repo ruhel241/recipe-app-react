@@ -10,7 +10,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 class Search extends Component {
     
     render() {
-      const { handleChange, search, handleSubmit } = this.props;
+      const { handleChange, search, handleSubmit, onKeyUpValue } = this.props;
    
       return(
         <Container maxWidth="sm">
@@ -31,6 +31,7 @@ class Search extends Component {
                 labelWidth={110}
                 value={search}
                 onChange={handleChange}
+                onKeyUp={onKeyUpValue}
                 endAdornment={
                   <IconButton
                     aria-label="toggle password visibility"

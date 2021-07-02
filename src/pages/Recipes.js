@@ -46,6 +46,12 @@ class Recipes extends Component {
             search: e.target.value
         }) 
     }
+
+    onKeyUpValue = e => {
+        if (e.key === 'Enter') {
+            this.handleSubmit(e);
+        }
+    }
    
     handleSubmit = e => {
         e.preventDefault();
@@ -67,6 +73,7 @@ class Recipes extends Component {
                     search={this.state.search}
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
+                    onKeyUpValue={this.onKeyUpValue}
                 />
                 {this.state.error ? (
                     <Container maxWidth="md" style={{marginTop:50}}>

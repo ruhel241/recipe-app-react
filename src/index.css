@@ -18,9 +18,9 @@ code {
 .recipe-nav{
   padding-left: 50px;
 }
-.logo {
-  /* width: 100%; */
-}
+/* .logo {
+   width: 100%; 
+} */
 .nav-menu ul{
   display: flex;
   margin: 0;
